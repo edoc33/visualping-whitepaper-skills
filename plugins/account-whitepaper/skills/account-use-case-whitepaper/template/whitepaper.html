@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Visualping for {{ACCOUNT_NAME}} White Paper</title>
+<style>
+@font-face{font-family:"VP Satoshi";src:url(assets/fonts/Satoshi-Bold.ttf) format("truetype");font-weight:700;font-style:normal}
+@font-face{font-family:"VP Satoshi";src:url(assets/fonts/Satoshi-Black.ttf) format("truetype");font-weight:900;font-style:normal}
+@font-face{font-family:"VP Inter";src:url(assets/fonts/Inter-Regular.ttf) format("truetype");font-weight:400;font-style:normal}
+@font-face{font-family:"VP Inter";src:url(assets/fonts/Inter-Medium.ttf) format("truetype");font-weight:500;font-style:normal}
+@page{size:8.5in 11in;margin:0}
+:root{--navy:#0c2235;--blue:#1882ff;--deep:#0b51ae;--text:#3a3a3a;--ink:#14171c;--muted:#6b7280;--line:#e3e8f0;--panel:#f7f9fe;--pill:#d9e8ff;--green:#16794a;--red:#b81b24}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff}
+body{font-family:"VP Inter",sans-serif;font-weight:400;color:var(--text);font-size:12.5px;line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1,h2,h3,h4,.sat,.eyebrow,.pill,.stat-num,.step-num,.chip,.btnlink,.tag{font-family:"VP Satoshi",sans-serif;font-weight:700}
+.page{width:816px;height:1056px;position:relative;overflow:hidden;page-break-after:always;break-after:page;padding:48px 72px 0}
+section.page:last-of-type{page-break-after:auto;break-after:auto}
+.hdr{display:flex;justify-content:space-between;align-items:center;height:28px}
+.hdr img{height:22px}
+.hdr span{font-size:11px;color:var(--ink)}
+.eyebrow{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--deep);margin-top:22px}
+h1{font-size:40px;line-height:1.12;color:var(--ink);letter-spacing:-.01em;margin-top:10px}
+h2{font-size:22px;line-height:1.25;color:var(--ink)}
+h3{font-size:15px;line-height:1.3;color:var(--ink);margin-bottom:6px}
+.lead{font-size:14px;line-height:1.65;margin-top:16px;color:var(--text)}
+.ftr{position:absolute;left:72px;right:72px;bottom:28px;border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;font-size:11px;color:var(--ink)}
+.card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff}
+.card p{font-size:12.5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.panel{background:var(--panel);border-radius:14px;padding:22px 24px}
+.pill{display:inline-block;background:var(--pill);color:var(--deep);font-size:10.5px;letter-spacing:.04em;padding:4px 10px;border-radius:999px;text-transform:uppercase}
+.forgp{font-family:"VP Inter";font-weight:500;color:var(--deep);margin-top:10px;font-size:13px}
+.illus{font-size:10px;color:var(--muted);margin-top:6px}
+/* cover */
+.cover{background:var(--navy);color:#fff;padding:60px 72px 0}
+.cover .ring{position:absolute;border:1px solid rgba(255,255,255,.12);border-radius:50%}
+.cover .dot{position:absolute;width:120px;height:120px;border-radius:50%;background:var(--blue);right:40px;top:80px}
+.cover .logo{height:26px;position:relative}
+.cover .eyebrow{color:#9fc3ff;margin-top:110px;position:relative}
+.cover h1{color:#fff;font-weight:900;font-size:54px;line-height:1.08;margin-top:16px;position:relative;width:520px}
+.cover .lead{color:#dfe7f2;font-size:17px;line-height:1.55;width:560px;position:relative}
+.badge{display:inline-block;margin-top:22px;border:1px solid rgba(159,195,255,.5);color:#cfe1ff;border-radius:999px;padding:5px 12px;font-size:11.5px;letter-spacing:.04em;position:relative}
+.alert{background:#fff;border-radius:14px;padding:18px 22px;margin-top:22px;color:var(--text);position:relative;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.alert .top{display:flex;gap:12px;align-items:center;font-size:11.5px}
+.tag{background:#fde8e9;color:var(--red);border-radius:999px;padding:3px 10px;font-size:11px}
+.alert h4{font-size:16px;color:var(--ink);margin:10px 0 6px}
+.alert p{font-size:12.5px}
+.alert .links{display:flex;gap:18px;margin-top:10px}
+.btnlink{color:var(--deep);font-size:12.5px}
+.cover .illus{color:#a9b6c6;position:relative}
+.stats{position:absolute;left:72px;right:72px;bottom:98px;border-top:1px solid rgba(255,255,255,.15);padding-top:22px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.stat-num{font-size:30px;color:#fff;line-height:1.1}
+.stats p{font-size:12.5px;color:#c9d4e2;margin-top:6px}
+.cover .cfoot{position:absolute;left:72px;right:72px;bottom:26px;display:flex;justify-content:space-between;font-size:11px;color:#c9d4e2}
+.cover .fn{font-size:10px;color:#a9b6c6}
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.tl .st{border:1px solid #d4dbe6;border-radius:10px;background:#fff;padding:12px 12px;height:148px;display:flex;flex-direction:column}
+.tl .st.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.tl .lab{font-family:"VP Satoshi";font-weight:700;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.tl .st.on .lab,.tl .st.on .big{color:#fff}
+.tl .lab.red{color:var(--red)}
+.tl .big{font-family:"VP Satoshi";font-weight:700;font-size:14px;line-height:1.25;color:var(--ink);margin-top:6px}
+.tl .note{margin-top:auto;font-size:11px;line-height:1.4}
+.tl .st.on .note{color:#e6f0ff}
+/* steps */
+.step{display:flex;gap:18px;align-items:flex-start;margin-bottom:10px}
+.step-num{flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:38px;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+.step-num .d{display:block;width:0.66em;text-align:center;line-height:1;transform:translate(var(--dx,0),var(--dy,0))}
+.step-num .d1{--dx:-0.010em;--dy:-0.019em}.step-num .d2{--dx:-0.001em;--dy:-0.013em}.step-num .d3{--dx:0.009em;--dy:-0.026em}.step-num .d4{--dx:0.011em;--dy:-0.019em}
+.ftr span:last-child{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+.dark{background:var(--navy);color:#dfe7f2;border-radius:14px;padding:22px 26px}
+.dark .eyebrow{color:#9fc3ff;margin-top:0}
+.dark h2{color:#fff;font-size:20px;margin:10px 0 14px}
+.dark h4{font-family:"VP Satoshi";font-weight:700;color:#fff;font-size:13px;margin-bottom:6px}
+.dark p{font-size:12px;color:#c9d4e2}
+/* mock lists */
+.mock{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:14px}
+.mock .t{font-family:"VP Satoshi";font-weight:700;font-size:12px;color:var(--ink);margin-bottom:8px}
+.row{display:flex;justify-content:space-between;background:#fff;border-radius:7px;padding:8px 10px;margin-top:6px;font-size:11.5px}
+.row b{font-family:"VP Inter";font-weight:500;color:var(--green)}
+.row i{font-style:normal;color:var(--muted)}
+.mockd{background:var(--navy);border-radius:12px;padding:14px 16px;color:#dfe7f2}
+.mockd .t{font-family:"VP Inter";font-weight:500;color:#9fc3ff;font-size:11.5px;margin-bottom:6px}
+.mockd .r{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.12);padding:8px 0;font-size:11.5px}
+.mockd .r i{font-style:normal;color:#a9b6c6}
+.mockd .r b{font-family:"VP Inter";font-weight:500;color:#9fc3ff}
+.mockd .f{font-size:11px;color:#c9d4e2;margin-top:8px}
+/* p5 */
+.rulebox{border:1.5px solid var(--blue);border-radius:10px;background:#fff;padding:12px 14px;font-size:13px;color:var(--ink)}
+.rulebox b{font-family:"VP Inter";font-weight:500;color:var(--deep)}
+.sumbox{border:1px solid var(--line);border-radius:10px;background:#fff;padding:12px 14px;font-size:13px;color:var(--ink)}
+.small-h{font-family:"VP Satoshi";font-weight:700;font-size:11.5px;color:var(--ink);margin-bottom:8px}
+.swatch{display:flex;gap:6px;margin:2px 0 8px}
+.swatch span{width:14px;height:14px;border-radius:4px;display:block}
+.p5c .card{padding:13px 15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 13px;font-size:12px;color:#fff}
+/* p6 */
+.sec{background:var(--panel);border-radius:10px;padding:14px 16px}
+.sec h3{font-size:13.5px;margin-bottom:5px}
+.sec p{font-size:11.5px;line-height:1.5}
+.gs .card{padding:14px 16px}
+.gs .eyebrow{font-size:10.5px;margin:0 0 8px}
+.price{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px}
+.price small{font-size:11px;color:var(--ink);display:block}
+.price .amt{font-family:"VP Satoshi";font-weight:700;font-size:23px;color:var(--ink);margin-top:2px}
+.cta{position:absolute;left:0;right:0;bottom:0;height:116px;background:var(--navy);padding:30px 72px;display:flex;justify-content:space-between;align-items:center}
+.cta h2{color:#fff;font-size:21px}
+.cta p{color:#c9d4e2;font-size:12px;margin-top:6px}
+.cta img{height:24px}
+</style>
+<!--IF:SHOW_DRAFT_BANNER--><style>section.page::before{content:"Internal draft. Not for customer use.";position:absolute;top:12px;left:0;right:0;text-align:center;font-family:"VP Inter";font-weight:500;font-size:10px;color:#b81b24;z-index:5}section.page.cover::before{color:#ffb3b8}</style><!--ENDIF:SHOW_DRAFT_BANNER-->
+</head>
+<body>
+<!--
+  Account use case white paper template (Visualping).
+  Every double-brace placeholder is filled from values.json by scripts/fill_template.py.
+  Every sentence must trace to a fact-sheet row (F#) or a guardrail row (G#). See ../SKILL.md.
+  Pages: 1 cover, 2 challenge, 3 how it works, 4 capabilities (find pages), 5 capabilities (review and route),
+  6 security + PoC + pricing + CTA. Optional blocks sit between IF:KEY and ENDIF:KEY comments and are kept only
+  when values.json sets KEY to true. Page numbers are filled automatically.
+  Never edit this file or a filled copy by hand: change values.json and refill (see ../SKILL.md step 5).
+-->
+
+<!-- PAGE 1: COVER (pain + promise) -->
+<section class="page cover">
+  <div class="ring" style="width:520px;height:520px;right:-170px;top:-200px"></div>
+  <div class="ring" style="width:420px;height:420px;right:-60px;top:-110px"></div>
+  <div class="dot"></div>
+  <img class="logo" src="assets/logo-white.svg" alt="Visualping">
+  <div class="eyebrow">White paper · Prepared for {{ACCOUNT_NAME}}</div>
+  <h1>{{COVER_HEADLINE}}</h1>
+  <p class="lead">{{COVER_DEK}}</p>
+  <!--IF:SHOW_BADGE--><div class="badge sat">#1 Page Monitoring Agent*</div><!--ENDIF:SHOW_BADGE-->
+  <div class="alert">
+    <div class="top"><span class="tag">Important change</span><span>{{EXAMPLE_URL}}</span></div>
+    <h4 class="sat">{{EXAMPLE_ALERT_TITLE}}</h4>
+    <p>AI summary: {{EXAMPLE_ALERT_SUMMARY}}</p>
+    <div class="links"><span class="btnlink">Open page</span><span class="btnlink">View changes</span></div>
+  </div>
+  <div class="illus">Illustrative alert</div>
+  <div class="stats">
+    <div><div class="stat-num">{{STAT1_NUM}}</div><p>{{STAT1_TEXT}}</p></div>
+    <div><div class="stat-num">{{STAT2_NUM}}</div><p>{{STAT2_TEXT}}</p></div>
+    <div><div class="stat-num">{{STAT3_NUM}}</div><p>{{STAT3_TEXT}}</p></div>
+  </div>
+  <!--IF:SHOW_BADGE--><div class="fn" style="position:absolute;left:72px;right:72px;bottom:46px">*#1 based on the most users publicly shared (2M+) and the most reviews on G2 and Gartner Peer Insights among page monitoring tools. Review counts as of {{BADGE_COUNTS_DATE}}.</div><!--ENDIF:SHOW_BADGE-->
+  <div class="cfoot"><span>{{MONTH_YEAR}}</span><span>visualping.io</span></div>
+</section>
+
+<!-- PAGE 2: WHY IT MATTERS -->
+<section class="page">
+  <div class="hdr"><img src="assets/logo.svg" alt="Visualping"><span>Visualping for {{ACCOUNT_NAME}}</span></div>
+  <div class="eyebrow">The challenge</div>
+  <h1 style="font-size:36px">{{CHALLENGE_HEADLINE}}</h1>
+  <p class="lead">{{CHALLENGE_LEAD}}</p>
+  <!--IF:SHOW_TIMELINE--><div class="panel" style="margin-top:24px">
+    <h3>{{TIMELINE_TITLE}} (illustrative)</h3>
+    <div class="tl">
+      <div class="st on"><div class="lab">{{TL1_LABEL}}</div><div class="big">{{TL1_EVENT}}</div><div class="note">{{TL1_NOTE}}</div></div>
+      <div class="st"><div class="lab">{{TL2_LABEL}}</div><div class="big">{{TL2_EVENT}}</div><div class="note">{{TL2_NOTE}}</div></div>
+      <div class="st"><div class="lab">{{TL3_LABEL}}</div><div class="big">{{TL3_EVENT}}</div><div class="note">{{TL3_NOTE}}</div></div>
+      <div class="st"><div class="lab red">{{TL4_LABEL}}</div><div class="big">{{TL4_EVENT}}</div><div class="note">{{TL4_NOTE}}</div></div>
+    </div>
+    <p style="margin-top:14px;font-size:12.5px">{{TIMELINE_CAPTION}}</p>
+  </div><!--ENDIF:SHOW_TIMELINE-->
+  <h2 style="margin-top:28px">What {{ACCOUNT_SHORT}} needs</h2>
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h3>{{NEED1_TITLE}}</h3><p>{{NEED1_TEXT}}</p></div>
+    <div class="card"><h3>{{NEED2_TITLE}}</h3><p>{{NEED2_TEXT}}</p></div>
+    <div class="card"><h3>{{NEED3_TITLE}}</h3><p>{{NEED3_TEXT}}</p></div>
+    <div class="card"><h3>{{NEED4_TITLE}}</h3><p>{{NEED4_TEXT}}</p></div>
+  </div>
+  <div class="ftr"><span>Visualping white paper · {{MONTH_YEAR}}</span><span class="pno"></span></div>
+</section>
+
+<!-- PAGE 3: HOW IT WORKS (four steps) -->
+<section class="page">
+  <div class="hdr"><img src="assets/logo.svg" alt="Visualping"><span>Visualping for {{ACCOUNT_NAME}}</span></div>
+  <div class="eyebrow">How it works</div>
+  <h1>{{STEPS_HEADLINE}}</h1>
+  <div style="margin-top:26px">
+    <div class="card step"><div class="step-num"><span class="d d1">1</span></div><div><h3>{{STEP1_TITLE}}</h3><p>{{STEP1_TEXT}}</p></div></div>
+    <div class="card step"><div class="step-num"><span class="d d2">2</span></div><div><h3>{{STEP2_TITLE}}</h3><p>{{STEP2_TEXT}}</p></div></div>
+    <div class="card step"><div class="step-num"><span class="d d3">3</span></div><div><h3>{{STEP3_TITLE}}</h3><p>{{STEP3_TEXT}}</p></div></div>
+    <div class="card step"><div class="step-num"><span class="d d4">4</span></div><div><h3>{{STEP4_TITLE}}</h3><p>{{STEP4_TEXT}}</p></div></div>
+  </div>
+  <div class="dark" style="margin-top:22px">
+    <div class="eyebrow">Illustrative example: {{EXAMPLE_SUBJECT}}</div>
+    <h2>{{EXAMPLE_HEADLINE}}</h2>
+    <div class="grid3" style="gap:20px">
+      <div><h4>Monitor</h4><p>{{EXAMPLE_MONITOR}}</p></div>
+      <div><h4>Skip</h4><p>{{EXAMPLE_SKIP}}</p></div>
+      <div><h4>Result</h4><p>{{EXAMPLE_RESULT}}</p></div>
+    </div>
+  </div>
+  <div class="ftr"><span>Visualping white paper · {{MONTH_YEAR}}</span><span class="pno"></span></div>
+</section>
+
+<!-- PAGE 4: CAPABILITIES PART 1 (finding the right pages) -->
+<!--IF:SHOW_CAP1_PAGE--><section class="page">
+  <div class="hdr"><img src="assets/logo.svg" alt="Visualping"><span>Visualping for {{ACCOUNT_NAME}}</span></div>
+  <div class="eyebrow">{{CAP1_EYEBROW}}</div>
+  <h1>{{CAP1_HEADLINE}}</h1>
+  <!--IF:SHOW_SITESCAN--><div class="grid2" style="margin-top:22px;gap:22px;align-items:start">
+    <div>
+      <span class="pill">Business plans</span>
+      <h2 style="margin-top:10px">Site scan</h2>
+      <p style="margin-top:8px">Enter a domain and describe what matters, for example "{{SITESCAN_EXAMPLE_PROMPT}}". Visualping reads up to 250 pages, checks each one against your description and lets you choose which to monitor.</p>
+      <p class="forgp">For {{ACCOUNT_SHORT}}: {{SITESCAN_FOR_ACCOUNT}}</p>
+    </div>
+    <div class="mock">
+      <div class="t">Pages on {{MOCK_DOMAIN}} (illustrative)</div>
+      <div class="row"><span>{{MOCK_PATH1}}</span><b>Match</b></div>
+      <div class="row"><span>{{MOCK_PATH2}}</span><b>Match</b></div>
+      <div class="row"><span>{{MOCK_PATH3}}</span><b>Match</b></div>
+      <div class="row"><span>{{MOCK_PATH4}}</span><i>Not a match</i></div>
+      <div class="row"><span>{{MOCK_PATH5}}</span><i>Not a match</i></div>
+    </div>
+  </div><!--ENDIF:SHOW_SITESCAN-->
+  <div style="border-top:1px solid var(--line);margin:22px 0"></div>
+  <!--IF:SHOW_DOMAIN_MONITORING--><div class="grid2" style="gap:22px;align-items:start">
+    <div class="mockd">
+      <div class="t">{{MOCK_DOMAIN}}{{MOCK_LISTING_PATH}} (illustrative)</div>
+      <div class="r"><span>{{MOCK_ITEM1}}</span><i>Read, no match</i></div>
+      <div class="r"><span>{{MOCK_ITEM2}}</span><b>{{MOCK_ITEM2_MATCH}}</b></div>
+      <div class="r"><span>{{MOCK_ITEM3}}</span><i>Read, no match</i></div>
+      <div class="f">{{MOCK_DM_RESULT}}</div>
+    </div>
+    <div>
+      <span class="pill">Solutions plans, on request</span>
+      <h2 style="margin-top:10px">Domain Monitoring</h2>
+      <p style="margin-top:8px">Visualping keeps each site's page list current. It rescans each site as often as you request, set with your Visualping team. New pages that the rescan reaches and that match your description get monitors on the next rescan, and pages that stop matching are paused.</p>
+      <p class="forgp">For {{ACCOUNT_SHORT}}: {{DM_FOR_ACCOUNT}}</p>
+    </div>
+  </div><!--ENDIF:SHOW_DOMAIN_MONITORING-->
+  <div class="grid2" style="margin-top:24px">
+    <div class="card"><h3>Discovery</h3><p>Describe what you want to watch in plain language and Visualping suggests pages, including sources you did not know to look for.</p></div>
+    <div class="card"><h3>AI assistant and bulk import</h3><p>Paste a list of known URLs into bulk import, or give the in-app assistant a list to create up to 100 monitors at a time. Labels are available on Business and Solutions plans.</p></div>
+  </div>
+  <div class="ftr"><span>Visualping white paper · {{MONTH_YEAR}}</span><span class="pno"></span></div>
+</section>
+<!--ENDIF:SHOW_CAP1_PAGE-->
+
+<!-- PAGE 5: CAPABILITIES PART 2 (reading, reviewing and routing changes) -->
+<!--IF:SHOW_CAP2_PAGE--><section class="page">
+  <div class="hdr"><img src="assets/logo.svg" alt="Visualping"><span>Visualping for {{ACCOUNT_NAME}}</span></div>
+  <div class="eyebrow">{{CAP2_EYEBROW}}</div>
+  <h1 style="font-size:36px">{{CAP2_HEADLINE}}</h1>
+  <div class="panel grid2" style="margin-top:16px;gap:18px;padding:16px 20px">
+    <div><div class="small-h">You write the rule</div><div class="rulebox"><b>Alert me when</b> {{ALERT_RULE}}</div></div>
+    <div><div class="small-h">AI writes the summary (illustrative)</div><div class="sumbox">{{AI_SUMMARY_EXAMPLE}}</div></div>
+  </div>
+  <div class="grid3 p5c" style="margin-top:12px">
+    <div class="card"><h3>AI alert criteria</h3><p>Start broad with "{{BROAD_RULE}}" and narrow later. Turn on important-only alerts to mute the rest.</p></div>
+    <div class="card"><h3>Text change view</h3><p>Added and removed text highlighted. Search the Timeline for "{{TIMELINE_SEARCH_TERM}}".</p></div>
+    <div class="card"><h3>One timeline across monitors</h3><p>In the dashboard, select any set of monitors, such as every monitor with a label, and the Timeline shows their alerts in one feed.</p></div>
+    <div class="card"><h3>Color-coded flags</h3><div class="swatch"><span style="background:#e5484d"></span><span style="background:#2fa36b"></span><span style="background:#f5c518"></span><span style="background:#1882ff"></span><span style="background:#8e4ec6"></span></div><p>Five colors: red, green, yellow, blue and purple. Your team decides what each means, such as escalate, in review or resolved.</p></div>
+    <div class="card"><h3>Comments on changes</h3><p>Discuss a finding where it appears, with a history of who flagged and commented.</p></div>
+    <div class="card"><h3>PDF change detection</h3><p>Spots changes inside PDFs, down to the table cell, rolling out gradually to existing monitors. The first 100 pages of each PDF are checked.</p></div>
+  </div>
+  <div class="dark" style="margin-top:12px;padding:18px 24px">
+    <h2 style="margin:0">Alerts, reports and answers where your team works</h2><div style="font-size:11.5px;color:#c9d4e2;margin-top:4px">{{DELIVERY_RECOMMENDATION}}</div>
+    <div class="chips"><span class="chip">Alerts: Email</span><span class="chip">Slack</span><span class="chip">Microsoft Teams</span><span class="chip">Google Sheets</span><span class="chip">Webhooks and Zapier</span><span class="chip">Digests: Scheduled reports</span><span class="chip">On demand: REST API</span><span class="chip">MCP for Claude and ChatGPT</span></div>
+    <p style="margin-top:10px;font-size:11px">Email, webhooks and the API work on every plan. Slack, Microsoft Teams, Google Sheets and scheduled reports need a Business or Solutions plan.</p>
+    <p style="margin-top:8px">With the MCP server, an analyst can ask Claude or ChatGPT what changed on {{MCP_SCOPE}} this week, without opening the dashboard.</p>
+  </div>
+  <div class="ftr"><span>Visualping white paper · {{MONTH_YEAR}}</span><span class="pno"></span></div>
+</section>
+<!--ENDIF:SHOW_CAP2_PAGE-->
+
+<!-- PAGE 6: SECURITY + PoC PLAN + PRICING + CTA -->
+<section class="page">
+  <div class="hdr"><img src="assets/logo.svg" alt="Visualping"><span>Visualping for {{ACCOUNT_NAME}}</span></div>
+  <div class="eyebrow">Security and trust</div>
+  <h1 style="font-size:32px">What your security team will ask for</h1>
+  <p style="margin-top:8px">{{SECURITY_SCOPE_SENTENCE}} Our Trust Center is public. The security whitepaper, DPA and Risk Ledger assessment are shared under NDA, usually within one business day. Request them at visualping.io/trust or from your Visualping contact.</p>
+  <div class="grid3" style="margin-top:14px;gap:10px">
+    <div class="sec"><h3>Trust Center</h3><p>Compliance status, practices and subprocessors at visualping.io/trust</p></div>
+    <div class="sec"><h3>Full assessment</h3><p>Risk Ledger security assessment with supporting evidence, under NDA</p></div>
+    <div class="sec"><h3>Compliance</h3><p>{{COMPLIANCE_LINE}}</p></div>
+    <div class="sec"><h3>SSO</h3><p>SAML SSO for Business accounts with Okta, Microsoft Entra ID (Azure AD) or Google Workspace, set up with our Support team; OIDC on request. SSO can be enforced for your domain; MFA is set in your identity provider.</p></div>
+    <div class="sec"><h3>Encryption</h3><p>TLS in transit, encryption at rest, automated backups</p></div>
+    <div class="sec"><h3>Roles</h3><p>Admin, Editor and Viewer roles in Business workspaces; hosted on AWS in the US</p></div>
+  </div>
+  <!--IF:SHOW_POC_PLAN--><div style="border-top:1px solid var(--line);margin:18px 0 0"></div>
+  <div class="eyebrow" style="margin-top:16px">Getting started</div>
+  <h1 style="font-size:32px">{{POC_HEADLINE}}</h1>
+  <div class="grid3 gs" style="margin-top:14px">
+    <div class="card"><div class="eyebrow">Step 1 · {{POC1_WHEN}}</div><h3>{{POC1_TITLE}}</h3><p>{{POC1_TEXT}}</p></div>
+    <div class="card"><div class="eyebrow">Step 2 · {{POC2_WHEN}}</div><h3>{{POC2_TITLE}}</h3><p>{{POC2_TEXT}}</p></div>
+    <div class="card"><div class="eyebrow">Step 3 · {{POC3_WHEN}}</div><h3>{{POC3_TITLE}}</h3><p>{{POC3_TEXT}}</p></div>
+  </div>
+  <!--IF:SHOW_POC_SUCCESS--><p style="font-size:11.5px;margin-top:10px"><span style="font-family:'VP Inter';font-weight:500;color:var(--ink)">Success test:</span> {{POC_SUCCESS_TEST}}<!--IF:SHOW_POC_OWNER--> Owner: {{POC_OWNER}}.<!--ENDIF:SHOW_POC_OWNER--><!--IF:SHOW_POC_DECISION_DATE--> Decision by {{POC_DECISION_DATE}}.<!--ENDIF:SHOW_POC_DECISION_DATE--></p><!--ENDIF:SHOW_POC_SUCCESS--><!--ENDIF:SHOW_POC_PLAN-->
+  <!-- Pricing: rep-confirmed quotes, or a public "from" price captioned with its source and date (G-20). -->
+  <!--IF:SHOW_PRICING--><div class="price">
+    <div><small>{{PRICE1_LABEL}}</small><div class="amt">{{PRICE1_AMOUNT}}</div></div>
+    <!--IF:SHOW_PRICE2--><div><small>{{PRICE2_LABEL}}</small><div class="amt">{{PRICE2_AMOUNT}}</div></div><!--ENDIF:SHOW_PRICE2-->
+    <!--IF:SHOW_PRICE3--><div><small>{{PRICE3_LABEL}}</small><div class="amt">{{PRICE3_AMOUNT}}</div></div><!--ENDIF:SHOW_PRICE3-->
+  </div>
+  <p style="font-size:11px;margin-top:8px">{{PRICING_CAPTION}}</p><!--ENDIF:SHOW_PRICING-->
+  <p style="position:absolute;left:72px;right:72px;bottom:124px;font-size:10px;color:var(--muted)">Information as of {{MONTH_YEAR}}. Plans, prices and features are confirmed in your order form.</p>
+  <div class="cta">
+    <div><h2>{{CTA_HEADLINE}}</h2><p>{{REP_NAME}}<!--IF:SHOW_REP_TITLE-->, {{REP_TITLE}}<!--ENDIF:SHOW_REP_TITLE--> · {{REP_EMAIL}}<!--IF:SHOW_REP_PHONE--> · {{REP_PHONE}}<!--ENDIF:SHOW_REP_PHONE--></p></div>
+    <img src="assets/logo-white.svg" alt="Visualping">
+  </div>
+</section>
+
+<script>
+// page numbers, in document order (cover is page 1 and carries no number)
+document.querySelectorAll('section.page').forEach((p,i)=>{const n=p.querySelector('.pno'); if(n) n.textContent=String(i+1);});
+</script>
+<script>
+// overflow check: mark any page whose content runs past its box or into the footer
+window.addEventListener('load',()=>{document.fonts.ready.then(()=>{
+  const out=[];
+  document.querySelectorAll('.page').forEach((p,i)=>{
+    const pr=p.getBoundingClientRect();
+    const f=p.querySelector('.ftr,.cta,.stats');
+    const limit=f?f.getBoundingClientRect().top:pr.bottom;
+    let maxB=0;
+    p.querySelectorAll('*').forEach(el=>{
+      if(el.closest('.ftr,.cta,.stats,.cfoot,.fn')||el.classList.contains('ring')||el.classList.contains('dot'))return;
+      const r=el.getBoundingClientRect(); if(r.height>0) maxB=Math.max(maxB,r.bottom);
+      if(el.scrollWidth>el.clientWidth+1 && getComputedStyle(el).overflow!=='visible') out.push('p'+(i+1)+' hscroll '+el.className);
+    });
+    // clipped boxes, right-margin overruns, broken images
+    p.querySelectorAll('.st,.cta,.hdr,.card,.sec,.alert,.mock,.mockd,.row,.stats > div').forEach(el=>{
+      if(el.scrollHeight>el.clientHeight+1||el.scrollWidth>el.clientWidth+1) out.push('p'+(i+1)+' clip '+el.className);
+    });
+    p.querySelectorAll('*').forEach(el=>{
+      if(el.closest('.cta')||el.classList.contains('ring')||el.classList.contains('dot'))return;
+      const r=el.getBoundingClientRect(); if(r.width>0 && r.right>pr.right-71) out.push('p'+(i+1)+' margin '+(el.className||el.tagName));
+    });
+    p.querySelectorAll('img').forEach(im=>{ if(!im.complete||!im.naturalWidth) out.push('p'+(i+1)+' img '+im.getAttribute('src')); });
+    // every mockup carries its own illustrative caption
+    p.querySelectorAll('.mock,.mockd,.alert,.sumbox,.tl').forEach(el=>{
+      const near=[el,el.previousElementSibling,el.nextElementSibling,el.parentElement&&el.parentElement.previousElementSibling];
+      if(!near.some(x=>x&&/illustrative/i.test(x.innerText))) out.push('p'+(i+1)+' nocaption '+el.className);
+    });
+    // label tracking at most 0.05em, measured
+    p.querySelectorAll('.eyebrow,.pill,.lab,.tag,.badge,.chip,.small-h').forEach(el=>{
+      const cs=getComputedStyle(el); const ls=parseFloat(cs.letterSpacing)||0; const fs=parseFloat(cs.fontSize);
+      if(ls/fs>0.051) out.push('p'+(i+1)+' tracking '+el.className+' '+(ls/fs).toFixed(3)+'em');
+    });
+    out.push('p'+(i+1)+' gap_to_footer='+Math.round(limit-maxB));
+  });
+  const fams=[...document.fonts].filter(f=>f.status==='loaded').map(f=>f.family+' '+f.weight);
+  out.push('fonts:'+fams.join(','));
+  document.body.setAttribute('data-check',out.join(' | '));
+});});
+</script>
+</body>
+</html>

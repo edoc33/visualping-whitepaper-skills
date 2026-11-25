@@ -1,0 +1,317 @@
+{
+ "ACCOUNT_NAME": [
+  "FIXTURE"
+ ],
+ "ACCOUNT_SHORT": [
+  "FIXTURE"
+ ],
+ "MONTH_YEAR": [
+  "FIXTURE"
+ ],
+ "COVER_HEADLINE": [
+  "FIXTURE"
+ ],
+ "COVER_DEK": [
+  "FIXTURE"
+ ],
+ "EXAMPLE_URL": [
+  "FIXTURE"
+ ],
+ "EXAMPLE_ALERT_TITLE": [
+  "FIXTURE"
+ ],
+ "EXAMPLE_ALERT_SUMMARY": [
+  "FIXTURE"
+ ],
+ "STAT1_NUM": [
+  "FIXTURE"
+ ],
+ "STAT1_TEXT": [
+  "FIXTURE"
+ ],
+ "STAT2_NUM": [
+  "FIXTURE"
+ ],
+ "STAT2_TEXT": [
+  "FIXTURE"
+ ],
+ "STAT3_NUM": [
+  "FIXTURE"
+ ],
+ "STAT3_TEXT": [
+  "FIXTURE"
+ ],
+ "CHALLENGE_HEADLINE": [
+  "FIXTURE"
+ ],
+ "CHALLENGE_LEAD": [
+  "FIXTURE"
+ ],
+ "TIMELINE_TITLE": [
+  "FIXTURE"
+ ],
+ "TL1_LABEL": [
+  "FIXTURE"
+ ],
+ "TL1_EVENT": [
+  "FIXTURE"
+ ],
+ "TL1_NOTE": [
+  "FIXTURE"
+ ],
+ "TL2_LABEL": [
+  "FIXTURE"
+ ],
+ "TL2_EVENT": [
+  "FIXTURE"
+ ],
+ "TL2_NOTE": [
+  "FIXTURE"
+ ],
+ "TL3_LABEL": [
+  "FIXTURE"
+ ],
+ "TL3_EVENT": [
+  "FIXTURE"
+ ],
+ "TL3_NOTE": [
+  "FIXTURE"
+ ],
+ "TL4_LABEL": [
+  "FIXTURE"
+ ],
+ "TL4_EVENT": [
+  "FIXTURE"
+ ],
+ "TL4_NOTE": [
+  "FIXTURE"
+ ],
+ "TIMELINE_CAPTION": [
+  "FIXTURE"
+ ],
+ "NEED1_TITLE": [
+  "FIXTURE"
+ ],
+ "NEED1_TEXT": [
+  "FIXTURE"
+ ],
+ "NEED2_TITLE": [
+  "FIXTURE"
+ ],
+ "NEED2_TEXT": [
+  "FIXTURE"
+ ],
+ "NEED3_TITLE": [
+  "FIXTURE"
+ ],
+ "NEED3_TEXT": [
+  "FIXTURE"
+ ],
+ "NEED4_TITLE": [
+  "FIXTURE"
+ ],
+ "NEED4_TEXT": [
+  "FIXTURE"
+ ],
+ "STEPS_HEADLINE": [
+  "FIXTURE"
+ ],
+ "STEP1_TITLE": [
+  "FIXTURE"
+ ],
+ "STEP1_TEXT": [
+  "FIXTURE"
+ ],
+ "STEP2_TITLE": [
+  "FIXTURE"
+ ],
+ "STEP2_TEXT": [
+  "FIXTURE"
+ ],
+ "STEP3_TITLE": [
+  "FIXTURE"
+ ],
+ "STEP3_TEXT": [
+  "FIXTURE"
+ ],
+ "STEP4_TITLE": [
+  "FIXTURE"
+ ],
+ "STEP4_TEXT": [
+  "FIXTURE"
+ ],
+ "EXAMPLE_SUBJECT": [
+  "FIXTURE"
+ ],
+ "EXAMPLE_HEADLINE": [
+  "FIXTURE"
+ ],
+ "EXAMPLE_MONITOR": [
+  "FIXTURE"
+ ],
+ "EXAMPLE_SKIP": [
+  "FIXTURE"
+ ],
+ "EXAMPLE_RESULT": [
+  "FIXTURE"
+ ],
+ "CAP1_EYEBROW": [
+  "FIXTURE"
+ ],
+ "CAP1_HEADLINE": [
+  "FIXTURE"
+ ],
+ "SITESCAN_EXAMPLE_PROMPT": [
+  "FIXTURE"
+ ],
+ "SITESCAN_FOR_ACCOUNT": [
+  "FIXTURE"
+ ],
+ "MOCK_DOMAIN": [
+  "FIXTURE"
+ ],
+ "MOCK_PATH1": [
+  "FIXTURE"
+ ],
+ "MOCK_PATH2": [
+  "FIXTURE"
+ ],
+ "MOCK_PATH3": [
+  "FIXTURE"
+ ],
+ "MOCK_PATH4": [
+  "FIXTURE"
+ ],
+ "MOCK_PATH5": [
+  "FIXTURE"
+ ],
+ "MOCK_LISTING_PATH": [
+  "FIXTURE"
+ ],
+ "MOCK_ITEM1": [
+  "FIXTURE"
+ ],
+ "MOCK_ITEM2": [
+  "FIXTURE"
+ ],
+ "MOCK_ITEM2_MATCH": [
+  "FIXTURE"
+ ],
+ "MOCK_ITEM3": [
+  "FIXTURE"
+ ],
+ "DM_FOR_ACCOUNT": [
+  "FIXTURE"
+ ],
+ "CAP2_EYEBROW": [
+  "FIXTURE"
+ ],
+ "CAP2_HEADLINE": [
+  "FIXTURE"
+ ],
+ "ALERT_RULE": [
+  "FIXTURE"
+ ],
+ "AI_SUMMARY_EXAMPLE": [
+  "FIXTURE"
+ ],
+ "BROAD_RULE": [
+  "FIXTURE"
+ ],
+ "TIMELINE_SEARCH_TERM": [
+  "FIXTURE"
+ ],
+ "DELIVERY_RECOMMENDATION": [
+  "FIXTURE"
+ ],
+ "MCP_SCOPE": [
+  "FIXTURE"
+ ],
+ "SECURITY_SCOPE_SENTENCE": [
+  "FIXTURE"
+ ],
+ "COMPLIANCE_LINE": [
+  "FIXTURE"
+ ],
+ "POC_HEADLINE": [
+  "FIXTURE"
+ ],
+ "POC1_WHEN": [
+  "FIXTURE"
+ ],
+ "POC1_TITLE": [
+  "FIXTURE"
+ ],
+ "POC1_TEXT": [
+  "FIXTURE"
+ ],
+ "POC2_WHEN": [
+  "FIXTURE"
+ ],
+ "POC2_TITLE": [
+  "FIXTURE"
+ ],
+ "POC2_TEXT": [
+  "FIXTURE"
+ ],
+ "POC3_WHEN": [
+  "FIXTURE"
+ ],
+ "POC3_TITLE": [
+  "FIXTURE"
+ ],
+ "POC3_TEXT": [
+  "FIXTURE"
+ ],
+ "CTA_HEADLINE": [
+  "FIXTURE"
+ ],
+ "REP_NAME": [
+  "FIXTURE"
+ ],
+ "REP_TITLE": [
+  "FIXTURE"
+ ],
+ "REP_EMAIL": [
+  "FIXTURE"
+ ],
+ "MOCK_DM_RESULT": [
+  "FIXTURE"
+ ],
+ "POC_SUCCESS_TEST": [
+  "FIXTURE"
+ ],
+ "POC_OWNER": [
+  "FIXTURE"
+ ],
+ "POC_DECISION_DATE": [
+  "FIXTURE"
+ ],
+ "BADGE_COUNTS_DATE": [
+  "FIXTURE"
+ ],
+ "PRICE1_LABEL": [
+  "FIXTURE"
+ ],
+ "PRICE1_AMOUNT": [
+  "FIXTURE"
+ ],
+ "PRICE2_LABEL": [
+  "FIXTURE"
+ ],
+ "PRICE2_AMOUNT": [
+  "FIXTURE"
+ ],
+ "PRICE3_LABEL": [
+  "FIXTURE"
+ ],
+ "PRICE3_AMOUNT": [
+  "FIXTURE"
+ ],
+ "PRICING_CAPTION": [
+  "FIXTURE"
+ ],
+ "REP_PHONE": [
+  "FIXTURE"
+ ]
+}

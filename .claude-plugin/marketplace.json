@@ -1,0 +1,21 @@
+{
+  "name": "account-whitepaper",
+  "owner": {
+    "name": "edoc33",
+    "url": "https://github.com/edoc33"
+  },
+  "metadata": {
+    "description": "A skill that turns one account's own words and usage into a checked, branded use case white paper.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "account-whitepaper",
+      "source": "./plugins/account-whitepaper",
+      "description": "Account use case white paper: read-only research across CRM, warehouse, call notes and Slack, a sourced fact sheet, a 4 to 6 page PDF and automated claim and privacy QA.",
+      "version": "0.1.0",
+      "category": "sales",
+      "keywords": ["sales-enablement", "white-paper", "product-marketing", "account-based", "qa"]
+    }
+  ]
+}

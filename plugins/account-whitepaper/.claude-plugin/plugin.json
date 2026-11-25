@@ -1,0 +1,14 @@
+{
+  "name": "account-whitepaper",
+  "displayName": "Account Use Case White Paper",
+  "version": "0.1.0",
+  "description": "Turns one account's own words, numbers and usage into a 4 to 6 page white paper with every product claim checked, and hands it to a person to review and send.",
+  "author": {
+    "name": "edoc33",
+    "url": "https://github.com/edoc33"
+  },
+  "homepage": "https://github.com/edoc33/visualping-whitepaper-skills",
+  "repository": "https://github.com/edoc33/visualping-whitepaper-skills",
+  "license": "MIT",
+  "keywords": ["sales-enablement", "white-paper", "product-marketing", "account-based", "qa"]
+}
